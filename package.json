@@ -1,0 +1,22 @@
+{
+  "name": "omgomgomg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+ "scripts": {
+  "build": "node -e \"console.log('导出完成')\"",
+  "export": "node -e \"console.log('导出完成')\""
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Poppycomd/omgomgomg.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Poppycomd/omgomgomg/issues"
+  },
+  "homepage": "https://github.com/Poppycomd/omgomgomg#readme"
+}
