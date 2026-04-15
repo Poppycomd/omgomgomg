@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript基础知识练习</title>
+</head>
+<body>
+    <h1>JavaScript基础知识点练习</h1>
+    <script>
+        // 1. 变量的定义（var/let/const三种方式）
+        let studentName = "YSM"; // let 定义可变变量
+        const studentId = "2024001"; // const 定义常量
+        var course = "JavaScript基础"; // var 传统定义方式
+
+        // 2. 变量类型演示
+        let age = 20; // 数字类型 Number
+        let isStudent = true; // 布尔类型 Boolean
+        let hobby = ["阅读", "编程", "旅行"]; // 数组类型 Array
+        let info = {name: studentName, id: studentId}; // 对象类型 Object
+        let nullValue = null; // 空类型 Null
+        let undefinedValue; // 未定义类型 Undefined
+
+        console.log("=== 变量类型测试 ===");
+        console.log("年龄（Number）：", age, typeof age);
+        console.log("是否学生（Boolean）：", isStudent, typeof isStudent);
+        console.log("爱好（Array）：", hobby, typeof hobby);
+        console.log("信息（Object）：", info, typeof info);
+
+        // 3. 表达式演示（算术/比较/逻辑/赋值）
+        let a = 10, b = 3;
+        let sum = a + b; // 算术表达式
+        let isGreater = a > b; // 比较表达式
+        let logicResult = (a > 5) && (b < 5); // 逻辑表达式
+        console.log("\n=== 表达式测试 ===");
+        console.log("a + b =", sum);
+        console.log("a > b ?", isGreater);
+        console.log("a>5 且 b<5 ?", logicResult);
+
+        // 4. 流程控制演示（if-else/for/while/switch）
+        console.log("\n=== 流程控制测试 ===");
+        // if-else 条件判断
+        if (age >= 18) {
+            console.log(studentName + " 已成年");
+        } else {
+            console.log(studentName + " 未成年");
+        }
+
+        // for 循环遍历数组
+        console.log("我的爱好：");
+        for (let i = 0; i < hobby.length; i++) {
+            console.log((i+1) + ". " + hobby[i]);
+        }
+
+        // switch 分支判断
+        let score = 85;
+        switch (Math.floor(score/10)) {
+            case 10:
+            case 9:
+                console.log("成绩等级：优秀");
+                break;
+            case 8:
+                console.log("成绩等级：良好");
+                break;
+            case 7:
+            case 6:
+                console.log("成绩等级：及格");
+                break;
+            default:
+                console.log("成绩等级：不及格");
+        }
+
+        // 5. 函数演示（普通函数/箭头函数/带参数函数）
+        // 普通函数：计算两数之和
+        function add(num1, num2) {
+            return num1 + num2;
+        }
+        // 箭头函数：计算两数乘积
+        const multiply = (num1, num2) => num1 * num2;
+        // 带默认参数的函数
+        function greet(name = "同学") {
+            return "你好，" + name + "！";
+        }
+
+        console.log("\n=== 函数测试 ===");
+        console.log("10 + 3 =", add(10, 3));
+        console.log("10 * 3 =", multiply(10, 3));
+        console.log(greet(studentName));
+        console.log(greet());
+    </script>
+</body>
+</html>
