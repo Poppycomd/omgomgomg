@@ -51,3 +51,12 @@
 - **推送**：git push 失败。脚本在 push 步骤无超时挂起 5 分钟以上（subprocess.run 无 timeout），终止后手动带低速超时参数重试仍挂起 3 分 44 秒无输出，确认网络层无法连接 github.com:443（与 10-12 及历史问题一致）
 - **经验**：workflow.py 的 step4_push_to_github 建议给 subprocess.run 加 timeout，避免自动化任务整轮卡死
 - **备注**：commit 8f64744 已落库，网络恢复后可手动 `git push origin main`
+
+## 2026-10-16 18:05
+
+- **状态**：部分成功 ⚠️
+- **日报**：`daily_report.md` 已生成并 git commit（commit: 4e9562b）
+  - 今日任务：需求分析、代码开发、单元测试、文档编写
+- **推送**：git push 失败，连接 github.com 被重置（`Recv failure: Connection was reset`，网络限制与历史一致）
+- **重要修复**：首跑曾挂起 9 分多钟（原因为 git 触发凭据提示，凭据助手子进程继承输出管道导致 subprocess 超时后仍阻塞）。已修复 workflow.py：subprocess 加 `GIT_TERMINAL_PROMPT=0`/`GIT_ASKPASS=echo`/`GCM_INTERACTIVE=Never`，print 加 flush，main 加行缓冲。重跑验证脚本数秒内完成，push 快速失败不再挂起。
+- **备注**：本地领先 origin/main 6 个 commit（含历史未推送提交），网络/凭据恢复后需手动 `git push origin main`
